@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HotelBooking.COM</title>
+    <link rel="stylesheet" href="HotelBooking.css">
+    <script type="text/javascript">
+       function validateForm(){
+        if(document.getElementById("cities").value == ""){
+        alert("PLEASE SELECT A CITY"); // prompt user
+        document.getElementById("cities").focus(); //set focus back to control
+        return false;
+    }
+    }
+    </script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+</head>
+<body>
+
+
+<div id="title">
+    <!--  <img src="ontario.jpeg" height="75px" width="75px">-->
+    <center><h1 class="label"><span style="font-size: 50px; color: #FF6A38">&#8462;</span>otel<span class="hotel">Booking.COM <i style='font-size:34px; color: #FF6A38;' class='fas'>&#xf594;</i></span></h1></center>
+</div>
+
+<!--div is used for the signin and register buttons where it links it to the html file-->
+<div id="signin">
+    <button id="sign"><i style='font-size:14px' class='fas'>&#xf2bd;</i><a style="text-decoration:none; color: #FF6A38" href="loginForm.html"> SIGN IN</a></button>
+    <button id="register"><i style='font-size:13px' class='fas'>&#xf234;</i> <a style="text-decoration:none; color: #FF6A38" href="signupForm.html">REGISTER</a></button>
+   
+</div>
+
+<!--div is used for the main navigation bar where it includes the home page, hotels and help dropdown menu for tha navbar-->
+
+<div>
+<ul>
+    <li><a href="HotelBooking.html" class="active"><i style='font-size:14px' class='fas'>&#xf494;</i> HOME</a></li>
+    <li><a href="HotelSearch.html"> <i style='font-size:14px' class='fas'>&#xf59d;</i> HOTELS</a></li>
+    <li class="dropdown">
+       <a href="javascript:void(0)" class="dropbtn"><span style="font-size: 13px;">&#9776;</span> HELP</a>
+        <div class="dropdown-content" style=" background-color: #0077CB;">
+            <a href="changeorder.html" class="change" >&#9986; Change your booking</a>
+            <a href="contact.html" class="contact">&#9990; Contact Us</a>
+        </div>
+    </li>
+</ul>
+</div>
+<br>
+
+<!--a form is created to take the input of the user for the city, num of rooms and num of adults and kids which then takes them to the hotel page when submit is clicked-->
+<form   onsubmit="return validateForm()">
+
+        <h2>Where To...</h2>
+    <h3>Search City  </h3>
+    <!--dropdown list is made-->
+    <select id="cities">
+        <option></option>
+        <option>Toronto, Ontario</option>
+        <option>Ottawa, Vancouver</option>
+        <option>Montreal, Quèbec</option>
+        <option>Winnipeg, Manitoba</option>
+        <option>New Delhi, India</option>
+        <option>Mumbai, India</option>
+        <option>Barcelona, Spain</option>
+        <option>Madrid, Spain</option>
+        <option>Paris, France</option>
+        <option>Melbourne, Australia</option>
+        <option>Amsterdam, Netherlands</option>
+        <option>Auckland, New Zealand</option>
+        <option>Colombo, Sri Lanka</option>
+    </select>
+    <h3>Rooms <input type="text" list="numbers" style="width: 40px"></h3>
+    <datalist id="numbers">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10+</option>
+    </datalist>
+    <h3>Adults 18+ <input type="text" list="adults" style="width: 40px"> Children 0-17 <input type="text" list="adults" style="width: 40px"></h3>
+    <datalist id="adults">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10+</option>
+    </datalist>
+    <br>
+    <button style="border-radius: 5px;" type="submit"><h2></i><a style="text-decoration:none; color: #FF6A38" href="HotelSearch.html"> Search Hotels</a> </h2></button>
+
+   
+</form>
+<br>
+<br>
+<br>
+<br>
+
+<!--playing an image with some text-->
+<h2 id="anotherid">Start Planning your next gateway</h2>
+
+        <div id="another">
+            <img src="get.jpg">
+            <p>Book on the go with our website</p>
+
+
+        </div>
+<h2 id="another2">We do more than just hotels...</h2>
+
+
+<div id="resort">
+    <img src="resort2.jfif" height="200px" width="380px" >
+    <p>RESORTS</p>
+</div>
+<div id="htel">
+    <img src="hotel2.jfif" height="200px" width="380px">
+    <p>HOTELS</p>
+</div>
+<div id="bedbed">
+    <img src="bedbed.jfif" height="200px" width="380px">
+    <p>BED & BREAKFAST</p>
+</div>
+<!--div is used to paste an image and have the text take the user to another page when clicked on-->
+<div id="email2">
+    <a href="signupForm.html"></a>
+    <img src="email55.png" height="100px" width="160px">
+    <p><a href="signupForm.html" style="text-decoration:none; color: #FF6A38">Sign Up For Our Latest Offer</a></p>
+</div>
+<strong><hr id="somethingend"></strong>
+
+<p id="lastthing">&#169; 2020 HotelBooking.COM is a private company. All rights reserved.<br>HotelBooking.COM and the HotelBooking.COM logo are trademarks or registered trademarks of HotelBooking.COM, LP in the Canada<br> and/ or other countries.
+    All other trademarks are the property of their respective owners.</p>
+
+<p id="lastlastthing">.</p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HotelBooking.COM</title>
+    <link rel="stylesheet" href="HotelBooking2.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script type="text/javascript" src="search.js"></script>
+</head>
+
+<body onload ="filterFunction('all')">
+
+    <div id="title">
+        <center>
+            <h1 class="label"><span style="font-size: 50px; color: #FF6A38">&#8462;</span>otel<span
+                    class="hotel">Booking.COM <i style='font-size:34px; color: #FF6A38;' class='fas'>&#xf594;</i></span>
+            </h1>
+        </center>
+    </div>
+
+    <div id="signin">
+        <button id="sign"><i style='font-size:14px' class='fas'>&#xf2bd;</i><a style="text-decoration:none; color: #FF6A38" href="loginForm.html"> SIGN IN</a></button>
+        <button id="register"><i style='font-size:13px' class='fas'>&#xf234;</i> <a style="text-decoration:none; color: #FF6A38" href="signupForm.html">REGISTER</a></button>
+        
+    </div>
+
+    <div>
+        <ul>
+            <li><a href="HotelBooking.html"><i style='font-size:14px' class='fas'>&#xf494;</i> HOME</a></li>
+            <li><a href="HotelSearch.html" class="active"> <i style='font-size:14px' class='fas'>&#xf59d;</i> HOTELS</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><span style="font-size: 13px;">&#9776;</span> HELP</a>
+                <div class="dropdown-content" style=" background-color: #0077CB;">
+                    <a href="changeorder.html">&#9986; Change your booking</a>
+            <a href="contact.html">&#9990; Contact Us</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div id="container">
+        <h1>Hotel Search and Booking Services</h1>
+        <!--creates a search field for the user to search a hotel-->
+        <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search for Hotel...">
+        <button onClick="window.location.reload();">Reset</button>
+        <br><br>
+        <!--creates buttons for the filterr-->
+        <div id="filter">
+            <button class="button" onclick="filterFunction('all')">Show All</button>
+            <button class="button" onclick="filterFunction('4star')">4 Star Rating</button>
+            <button class="button" onclick="filterFunction('5star')">5 Star Rating</button>
+        </div><br>
+        <!--creates divs for each hotel witha value that represents the amount of stars it has recieved and also links the hotelpage to the buttons-->
+        <div class="hotels">
+            <div class="hotelDiv 5star" id="hotel1" value="59">
+                <a href="hotelpage.html">Twin Ocean Hotel & Spa</a>
+            </div>
+            <div class="hotelDiv 4star" id="hotel2" value="69">
+                <a href="hotelpage2.html">Double Gem Hotel & Spa</a>
+            </div>
+            <div class="hotelDiv 5star" id="hotel3" value="29">
+                <a href="hotelpage3.html">Dual Crown Hotel</a>
+            </div>
+            <div class="hotelDiv 5star" id="hotel4" value="39">
+                <a href="hotelpage4.html">Amber Resort</a>
+            </div>
+            <div class="hotelDiv 4star" id="hotel5" value="159" style="color: white;">
+                <a href="hotelpage5.html">Cloud Hotel & Spa</a>
+            </div>
+            <div class="hotelDiv 4star" id="hotel6" value="99">
+                <a href="hotelpage6.html">Palace Resort & Spa</a>
+            </div>
+          
+        </div>
+    </div>
+
+</body>
+
+</html>

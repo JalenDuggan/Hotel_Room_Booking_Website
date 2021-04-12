@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HotelBooking.COM</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" href="styles.css">
+
+	<script type="text/javascript">
+		function validate() 
+		{
+			var a = document.getElementById("email").value;
+			var b = document.getElementById("pass").value;
+			if (a == "" || b == "") 
+			{
+				alert ("Please complete form before submission.");
+				return false;
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<div id="title">
+    <!--  <img src="ontario.jpeg" height="75px" width="75px">-->
+    <center><h1 class="label"><span style="font-size: 50px; color: #FF6A38">&#8462;</span>otel<span class="hotel">Booking.COM <i style='font-size:34px; color: #FF6A38;' class='fas'>&#xf594;</i></span></h1></center>
+</div>
+
+<div id="signin">
+    <button id="sign"><i style='font-size:14px' class='fas'>&#xf2bd;</i><a style="text-decoration:none; color: #FF6A38" href="loginForm.html"> SIGN IN</a></button>
+    <button id="register"><i style='font-size:13px' class='fas'>&#xf234;</i> <a style="text-decoration:none; color: #FF6A38" href="signupForm.html">REGISTER</a></button>
+
+</div>
+
+<div>
+<ul>
+    <li><a href="HotelBooking.html"><i style='font-size:14px' class='fas'>&#xf494;</i> HOME</a></li>
+    <li><a href="HotelSearch.html"> <i style='font-size:14px' class='fas'>&#xf59d;</i> HOTELS</a></li>
+    <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn"><span style="font-size: 13px;">&#9776;</span> HELP</a>
+        <div class="dropdown-content">
+  <a href="changeorder.html">&#9986; Change your booking</a>
+            <a href="contact.html">&#9990; Contact Us</a>
+        </div>
+    </li>
+</ul>
+</div>
+	<div id="box">
+		<!--creates a form so the user can enter their infor and when the submit button is clicked it checks to see if there are any fields empty due to the return validateform()-->
+		<form method="POST" action="checkUser.php" onsubmit="return validate()">
+			<h1 class="htitle">LOGIN</h1>
+
+			Email <br>
+			<input type="Email" name="email" id="email" class="same"> <br><br>
+			Password <br>
+			<input type="password" name="pass" id="pass" class="same"> <br><br>
+			
+			<input type="submit" name="submit" id="ssubmit"value="LOGIN">
+		</form>
+	</div>
+</body>
+
+</html>

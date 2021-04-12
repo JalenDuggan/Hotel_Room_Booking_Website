@@ -1,0 +1,93 @@
+.billinginfo{
+    position: relative;
+    left: 39%;
+    background-color: white;
+    width: 400px;
+    text-align: center;
+    padding: 0px 0px 15px 0px;
+    font-family: Verdana, sans-serif;
+    color: white;
+    border-width: thick;
+    border-color: black;
+
+}
+#billing{
+    background-color: #003580;
+    padding: 10px;
+    text-align: left;
+
+
+}
+.same{
+    width: 250px;
+    height: 30px;
+    border-top: black 10px;
+    border-left: black 10px;
+    border-right: black 10px;
+    outline: none;
+}
+#title{
+    position: relative;
+    background-color: #003580;
+    padding: 5px;
+
+}
+.hotel{
+    color: white;
+}
+.label{
+
+    font-size: 30px;
+    font-family: DejaVu Sans Mono, monospace;
+    color: #0077CB;
+}
+.Payment{
+    position: relative;
+    left: 39%;
+    background-color: white;
+    width: 400px;
+    text-align: left;
+    padding: 0px 10px 15px 10px;
+    font-family: Verdana, sans-serif;
+    color: black;
+
+}
+#payement{
+    background-color: #003580;
+    padding: 10px;
+    color: white;
+
+}
+.samesame{
+    width: 250px;
+    height: 20px;
+    border-top: black 10px;
+    border-left: black 10px;
+    border-right: black 10px;
+    outline: none;
+}
+.same1{
+    width: 40px;
+    height: 20px;
+}
+.same2{
+    width: 50px;
+    height: 20px;
+    border-top: black 10px;
+    border-left: black 10px;
+    border-right: black 10px;
+    outline: none;
+}
+#submit{
+    position: relative;
+    left: 28%;
+    width: 200px;
+    height: 40px;
+    color: #003580;
+    border: 5px black;
+    font-weight: bolder;
+}
+#image{
+    position: relative;
+    align-content: center;
+}

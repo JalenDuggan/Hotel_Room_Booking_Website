@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HotelBooking.COM</title>
+    <link rel="stylesheet" href="HotelBooking2.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<title>Dates</title>
+	<style type="text/css">
+		ul {
+			list-style-type: none;
+		}
+		body {
+			font-family: "Monaco", Arial;
+		}
+
+		.month {
+  			padding: 70px 25px;
+  			width: 97.3%;
+  			background: #7397dd;
+  			text-align: center;
+  			color: white;
+  			font-size: 20px;
+		}
+
+    .month li{
+      margin-left: 45%;
+      background-color: none;
+    }
+
+		.weekdays {
+  			margin: 0;
+  			padding: 10px 0;
+  			background-color: lightgrey;
+		}
+
+		.weekdays li {
+  			display: inline-block;
+  			width: 13.6%;
+  			text-align: center;
+		}
+
+		.days {
+  			padding: 10px 0;
+  			background: #eee;
+  			margin: 0;
+		}
+
+		.days li {
+  			display: inline-block;
+  			width: 13.6%;
+  			text-align: center;
+  			margin-bottom: 10px;
+  			font-size: 12px;
+		}
+
+		input[type=submit] {
+			text-align: center;
+			color: white;
+			border: none;
+  			padding: 16px 32px;
+  			background-color: #7397dd;
+  			margin: 4px 2px;
+  			font-size: 16px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function getDates() {
+			var numOfDates = 0;
+			var form = document.forms["dateForm"];
+			var selectedDate = form.elements["date[ ]"];
+
+			for (var i = 0; i < selectedDate.length; i++) {
+       			if (selectedDate[i].checked) {
+        		numOfDates += 1;
+        		}
+    		}
+
+    		return numOfDates;
+    	}
+
+    	function validate() {
+    		if (getDates() >= 2) {
+				return true;
+    		} else {
+				alert("Please select a minimum of 2 days before submitting.");
+				return false; // returns false if there is an element unfilled
+			}
+    	}
+
+    	function Calculatetotal(){
+    		var total = getDates()*110;
+
+    		var divobj = document.getElementById("totalPrice");
+			var divobj2 = document.getElementById("hst");
+			var divobj3 = document.getElementById("subtotal");
+
+    		var HST = total*0.13;
+			var subtotal = total+HST;
+			divobj.style.display="block";
+
+    		divobj.innerHTML = "total price:.....$"+total.toFixed(2);
+			divobj2.innerHTML = "HST:.............$"+HST.toFixed(2);
+			divobj3.innerHTML = "Subtotal:........$"+subtotal.toFixed(2);
+    	}
+	</script>
+</head>
+<body>
+	<div id="title">
+    <!--  <img src="ontario.jpeg" height="75px" width="75px">-->
+    <center><h1 class="label"><span style="font-size: 50px; color: #FF6A38">&#8462;</span>otel<span class="hotel">Booking.COM <i style='font-size:34px; color: #FF6A38;' class='fas'>&#xf594;</i></span></h1></center>
+</div>
+
+<div id="signin">
+    <button id="sign"><i style='font-size:14px' class='fas'>&#xf2bd;</i><a style="text-decoration:none; color: #FF6A38" href="loginForm.html"> SIGN IN</a></button>
+    <button id="register"><i style='font-size:13px' class='fas'>&#xf234;</i> <a style="text-decoration:none; color: #FF6A38" href="signupForm.html">REGISTER</a></button>
+   
+</div>
+
+<div>
+<ul>
+    <li><a href="HotelBooking.html"><i style='font-size:14px' class='fas'>&#xf494;</i> HOME</a></li>
+    <li><a href="HotelSearch.html"> <i style='font-size:14px' class='fas'>&#xf59d;</i> HOTELS</a></li>
+    <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn"><span style="font-size: 13px;">&#9776;</span> HELP</a>
+        <div class="dropdown-content">
+  <a href="changeorder.html">&#9986; Change your booking</a>
+            <a href="contact.html">&#9990; Contact Us</a>
+        </div>
+    </li>
+</ul>
+</div>
+	<div class="month">
+  		<ul>
+    		<li>DECEMBER<br>2020</li>
+        <li style="color: #8d2430; margin-left: 32%"><strong>Please note booking for this month is only aviable due to COVID-19</strong></li>
+  		</ul>
+	</div>
+
+<!--creates a list to print out the days of the week ontop of the calendar-->
+	<ul class="weekdays">
+  		<li>Monday</li>
+  		<li>Tuesday</li>
+		<li>Wednesday</li>
+  		<li>Thursday</li>
+  		<li>Friday</li>
+  		<li>Saturday</li>
+  		<li>Sunday</li>
+	</ul>
+
+  <!--a form is created where it uses checkboxes to represent the dates so the user checks which date they wanna stay at, and the dates will form an array due to the name having square brackets-->
+	<form id="dateForm" action="dates.php" method="POST" onsubmit="return validate()">
+		<ul class="days">
+  			<li style="color: grey">30</li>
+  			<li><input type="checkbox" name="date[ ]" value="1" onclick="Calculatetotal()">1</li>
+  			<li><input type="checkbox" name="date[ ]" value="2" onclick="Calculatetotal()">2</li>
+  			<li><input type="checkbox" name="date[ ]" value="3" onclick="Calculatetotal()">3</li>
+  			<li><input type="checkbox" name="date[ ]" value="4" onclick="Calculatetotal()">4</li>
+  			<li><input type="checkbox" name="date[ ]" value="5" onclick="Calculatetotal()">5</li>
+  			<li><input type="checkbox" name="date[ ]" value="6" onclick="Calculatetotal()">6</li>
+  			<li><input type="checkbox" name="date[ ]" value="7" onclick="Calculatetotal()">7</li>
+  			<li><input type="checkbox" name="date[ ]" value="8" onclick="Calculatetotal()">8</li>
+  			<li><input type="checkbox" name="date[ ]" value="9" onclick="Calculatetotal()">9</li>
+  			<li><input type="checkbox" name="date[ ]" value="10" onclick="Calculatetotal()">10</li>
+  			<li><input type="checkbox" name="date[ ]" value="11" onclick="Calculatetotal()">11</li>
+  			<li><input type="checkbox" name="date[ ]" value="12" onclick="Calculatetotal()">12</li>
+  			<li><input type="checkbox" name="date[ ]" value="13" onclick="Calculatetotal()">13</li>
+  			<li><input type="checkbox" name="date[ ]" value="14" onclick="Calculatetotal()">14</li>
+  			<li><input type="checkbox" name="date[ ]" value="15" onclick="Calculatetotal()">15</li>
+  			<li><input type="checkbox" name="date[ ]" value="16" onclick="Calculatetotal()">16</li>
+  			<li><input type="checkbox" name="date[ ]" value="17" onclick="Calculatetotal()">17</li>
+	  		<li><input type="checkbox" name="date[ ]" value="18" onclick="Calculatetotal()">18</li>
+	  		<li><input type="checkbox" name="date[ ]" value="19" onclick="Calculatetotal()">19</li>
+	  		<li><input type="checkbox" name="date[ ]" value="20" onclick="Calculatetotal()">20</li>
+	  		<li><input type="checkbox" name="date[ ]" value="21" onclick="Calculatetotal()">21</li>
+	  		<li><input type="checkbox" name="date[ ]" value="22" onclick="Calculatetotal()">22</li>
+	  		<li><input type="checkbox" name="date[ ]" value="23" onclick="Calculatetotal()">23</li>
+	  		<li><input type="checkbox" name="date[ ]" value="24" onclick="Calculatetotal()">24</li>
+	  		<li><input type="checkbox" name="date[ ]" value="25" onclick="Calculatetotal()">25</li>
+	  		<li><input type="checkbox" name="date[ ]" value="26" onclick="Calculatetotal()">26</li>
+	  		<li><input type="checkbox" name="date[ ]" value="27" onclick="Calculatetotal()">27</li>
+	  		<li><input type="checkbox" name="date[ ]" value="28" onclick="Calculatetotal()">28</li>
+	  		<li><input type="checkbox" name="date[ ]" value="29" onclick="Calculatetotal()">29</li>
+	  		<li><input type="checkbox" name="date[ ]" value="30" onclick="Calculatetotal()">30</li>
+	  		<li><input type="checkbox" name="date[ ]" value="31" onclick="Calculatetotal()">31</li>
+	  		<li style="color: grey">1</li>
+	  		<li style="color: grey">2</li>
+	  		<li style="color: grey">3</li>
+		</ul>
+		<div id="totalPrice" align="center"></div>
+		<div id="hst" align="center"></div>
+		<div id="subtotal" align="center"></div>
+		<div align="center">
+			<input type="submit" name="submit" value="BOOK NOW">
+		</div>
+	</form>
+</body>
+</html>

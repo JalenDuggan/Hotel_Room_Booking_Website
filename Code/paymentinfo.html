@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Booking Payment Page</title>
+    <link rel="stylesheet" href="paymentinfo.css">
+    <script type="text/javascript">
+        function validateForm(){
+        /*checks to see if the user has inputted a number and if not it warns them*/
+        var x = document.getElementById("fname").value;
+        if(x==""||x==null){
+            alert("Please enter the Full Name");
+            return false;
+        }
+
+        var y = document.getElementById("address").value;
+        if(y==""||y==null){
+            alert("Please enter the address");
+            return false;
+        }
+
+        var z = document.getElementById("city").value;
+        if(z==""||z==null){
+            alert("Please enter the city");
+            return false;
+        }
+
+        var a = document.getElementById("email").value;
+        if(a==""||a==null){
+            alert("Please enter the Email");
+            return false;
+        }
+
+        var b = document.getElementById("prov").value;
+        if(b==""||b==null){
+            alert("Please enter the Province");
+            return false;
+        }
+
+        var c = document.getElementById("cvv").value;
+        if(c==""||c==null){
+            alert("Please enter the CCV number");
+            return false;
+        }
+        var d = document.getElementById("pcode").value;
+        if(d==""||d==null){
+            alert("Please enter the Postal Code");
+            return false;
+        }
+        var e = document.getElementById("cname").value;
+        if(e==""||e==null){
+            alert("Please enter the name on the credit card");
+            return false;
+        }
+        var f = document.getElementById("cnum").value;
+        if(f==""||f==null){
+            alert("Please enter the credit card number");
+            return false;
+        }
+        var g = document.getElementById("emonth").value;
+        if(g==""||g==null){
+            alert("Please enter the month the card expires");
+            return false;
+        }
+        var h = document.getElementById("eyear").value;
+        if(h==""||h==null){
+            alert("Please enter the year the card expires");
+            return false;
+        }
+
+    }
+    </script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+<body>
+<div id="title">
+    <!--  <img src="ontario.jpeg" height="75px" width="75px">-->
+    <center><h1 class="label"><span style="font-size: 50px; color: #FF6A38">&#8462;</span>otel<span class="hotel">Booking.COM <i style='font-size:34px; color: #FF6A38;' class='fas'>&#xf594;</i></span></h1></center>
+</div>
+<br>
+<br>
+    <div class="paymentuser">
+
+        <!--creates a form so the user can enter their infor and when the submit button is clicked it checks to see if there are any fields empty due to the return validateform()-->
+        <form action="userpayment.php" method="POST" onsubmit="return validateForm()" >
+            <div class="billinginfo">
+                <p id="billing"><strong>Billing Information</strong></p>
+                <br><input class="same" type="text" name="fname" id="fname" placeholder="Full Name"/><br>
+                <br><input class="same" type="email" name="Semail" id="email" placeholder="Email"/><br>
+                <br><input class="same" type="text" name="address" id="address" placeholder="Address"/><br>
+                <br><input class="same" type="text" name="city" id="city" placeholder="City"/><br>
+                <br><input class="same" type="text" name="prov" id="prov" placeholder="Province"/><br>
+                <br><input class="same" type="text" name="pcode" id="pcode" placeholder="Postal Code"/><br>
+            </div>
+            <br>
+            <b><hr width="450px"></b>
+            <br>
+            <div class="Payment">
+                <p id="payement"><strong>Payment Information</strong></p>
+                <br>
+                 Name on Card<br><input class="samesame" type="text" name="cname" id="cname"/><br><br>
+                 Credit Card Number<br><input class="samesame" type="text" name="cnum" id="cnum"/><br> <br>
+            <!--    <img src="picture/visa.png" alt="Visa" class="cards"><img src="picture/mCard.png" alt="Mastercard" class="cards"><img src="picture/aExpress.png" alt="American Express Card" class="cards"><br> -->
+                Expiration<br><br><input class="same1" type="month" name="emonth" id="emonth" placeholder="MM"/>
+                /<input class="same1" type="" name="eyear" id="eyear" placeholder="YYYY"/><br><br>
+                CVV<br><input class="same2" type="password" name="cvv" id="cvv"/><br>
+                <br>
+
+                <img src="visa1.png" height="40px" width="60px"  >&nbsp;<img src="mastercard.png"  height="40px" width="60px" >&nbsp;<img src="express2.png" height="40px" width="40px"><br><br>
+
+<br>
+            <input type="submit" name="submit" id="submit" value="Confirm Payment"/>
+            </div>
+
+            <br>
+            <b><hr width="450px"></b>
+            <br>
+            <br>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+
+Book Hotels sends user information to the hotel of choice in order to book and confirm payment but payment isn’t made until the day before the booking so the user can cancel. If the user were to book a room for the following day, then a notification would inform the user that the payment cannot be refunded.
